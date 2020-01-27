@@ -4,7 +4,7 @@
 #
 Name     : php-svm
 Version  : 0.2.3
-Release  : 2
+Release  : 3
 URL      : https://pecl.php.net//get/svm-0.2.3.tgz
 Source0  : https://pecl.php.net//get/svm-0.2.3.tgz
 Summary  : No detailed summary available
@@ -26,6 +26,7 @@ lib components for the php-svm package.
 
 %prep
 %setup -q -n svm-0.2.3
+cd %{_builddir}/svm-0.2.3
 
 %build
 export http_proxy=http://127.0.0.1:9/
@@ -44,4 +45,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20180731/svm.so
+/usr/lib64/extensions/no-debug-non-zts-20190902/svm.so
