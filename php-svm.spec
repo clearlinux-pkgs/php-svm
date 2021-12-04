@@ -4,7 +4,7 @@
 #
 Name     : php-svm
 Version  : 0.2.3
-Release  : 11
+Release  : 12
 URL      : https://pecl.php.net//get/svm-0.2.3.tgz
 Source0  : https://pecl.php.net//get/svm-0.2.3.tgz
 Summary  : No detailed summary available
@@ -45,4 +45,4 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20200930/svm.so
+/usr/lib64/extensions/no-debug-non-zts-20210902/svm.so
