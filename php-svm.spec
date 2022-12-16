@@ -4,13 +4,14 @@
 #
 Name     : php-svm
 Version  : 0.2.3
-Release  : 27
+Release  : 28
 URL      : https://pecl.php.net//get/svm-0.2.3.tgz
 Source0  : https://pecl.php.net//get/svm-0.2.3.tgz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-3-Clause
 Requires: php-svm-lib = %{version}-%{release}
+Requires: php-svm-license = %{version}-%{release}
 BuildRequires : buildreq-php
 
 %description
@@ -19,9 +20,18 @@ BuildRequires : buildreq-php
 %package lib
 Summary: lib components for the php-svm package.
 Group: Libraries
+Requires: php-svm-license = %{version}-%{release}
 
 %description lib
 lib components for the php-svm package.
+
+
+%package license
+Summary: license components for the php-svm package.
+Group: Default
+
+%description license
+license components for the php-svm package.
 
 
 %prep
@@ -37,6 +47,9 @@ phpize
 make  %{?_smp_mflags}
 
 %install
+mkdir -p %{buildroot}/usr/share/package-licenses/php-svm
+cp %{_builddir}/svm-%{version}/LICENSE %{buildroot}/usr/share/package-licenses/php-svm/1fa34750b71fa2e95741c06ce78485cc20b24637
+cp %{_builddir}/svm-%{version}/libsvm/COPYRIGHT %{buildroot}/usr/share/package-licenses/php-svm/c0269f7355919b74c2e55c405e2b3c8af2554bc1
 %make_install
 
 
@@ -45,4 +58,9 @@ make  %{?_smp_mflags}
 
 %files lib
 %defattr(-,root,root,-)
-/usr/lib64/extensions/no-debug-non-zts-20210902/svm.so
+/usr/lib64/extensions/no-debug-non-zts-20220829/svm.so
+
+%files license
+%defattr(0644,root,root,0755)
+/usr/share/package-licenses/php-svm/1fa34750b71fa2e95741c06ce78485cc20b24637
+/usr/share/package-licenses/php-svm/c0269f7355919b74c2e55c405e2b3c8af2554bc1
