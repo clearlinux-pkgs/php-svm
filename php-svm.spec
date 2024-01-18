@@ -7,7 +7,7 @@
 #
 Name     : php-svm
 Version  : 0.2.3
-Release  : 52
+Release  : 53
 URL      : https://pecl.php.net//get/svm-0.2.3.tgz
 Source0  : https://pecl.php.net//get/svm-0.2.3.tgz
 Summary  : No detailed summary available
